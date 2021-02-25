@@ -20,4 +20,14 @@ public class Tests {
 	    int n=c.add("100,200");
 		Assert.assertEquals(300,n);
 	}
+	@Test
+	public void StringWithNewLineNumbersTest(){
+	    int n=c.add("100\n200");
+		Assert.assertEquals(300,n);
+	}
+	@Test
+	public void StringWithThreeNumbersTest() {
+	    int n=c.add("100,200\n1");
+		Assert.assertEquals(301,n);
+	}
 }
