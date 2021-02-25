@@ -1,7 +1,7 @@
 package rakshit.com.StringCalc;
 
 public class Calculator {
-	public int add(String s) {
+	public int add(String s) throws Exception {
 		   String deli=",|\n";
 		 
 		  if(s.length()==0)return 0;
@@ -12,11 +12,22 @@ public class Calculator {
 }
 	
 	
-	public int getSum(String[] numbers){
-		  int sum=0;
+	public int getSum(String[] numbers)throws Exception{
+		int sum=0;
+		  fireNegative(numbers);
 		  for(String temp:numbers) {
+			  if(Integer.parseInt(temp)>1000)continue;
 			  sum+=Integer.parseInt(temp);
 		  }
+		  
 		  return sum;
+	  }
+	
+	public void fireNegative(String[] numbers) throws Exception {
+		  for(String temp:numbers) {
+			  if(Integer.parseInt(temp)<0) {
+				  throw new Exception("Negative input!");
+			  }
+		  }
 	  }
 }
