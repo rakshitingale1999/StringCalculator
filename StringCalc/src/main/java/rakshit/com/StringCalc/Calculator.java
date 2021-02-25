@@ -25,8 +25,10 @@ public class Calculator {
 		  if(numbers.length==1)return Integer.parseInt(numbers[0]);//Contains only one number case
 		  
 		  return getSum(numbers);
+		  
 }
 	
+	//now following are all the used functions
 	//Function to get sum
 	public int getSum(String[] numbers)throws Exception{
 		int sum=0;
