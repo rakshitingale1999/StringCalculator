@@ -34,4 +34,14 @@ public class Tests {
 	public void StringNegativeTest() throws Exception {
 	   c.add("-1");
 	}
+	@Test
+	public void StringWithGreaterThanThousandTest() throws Exception {
+	    int n=c.add("100,1001\n1");
+		Assert.assertEquals(101,n);
+	}
+	@Test
+	public void StringWithDiffDeliTest() throws Exception {
+	    int n=c.add("//;\n1;2");
+		Assert.assertEquals(3,n);
+	}
 }
