@@ -44,4 +44,14 @@ public class Tests {
 	    int n=c.add("//;\n1;2");
 		Assert.assertEquals(3,n);
 	}
+	@Test
+	public void StringWithMultipleDeliTest() throws Exception {
+	    int n=c.add("//[*][%]\n1*2%3");
+		Assert.assertEquals(6,n);
+	}
+	@Test
+	public void StringWithMultiCharDeliTest() throws Exception {
+	    int n=c.add("//[***][%%%]\n1***2%%%3");
+		Assert.assertEquals(6,n);
+	}
 }
